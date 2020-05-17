@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %} - 后台管理 - 文档管理</title>
-    <link rel="icon" href="{% static 'favicon_16.png' %}"/>
+    <link rel="icon" href="{% static 'logo.jpg' %}"/>
     <link href="{% static 'layui/css/layui.css' %}?version={{mrdoc_version}}" rel="stylesheet">
     <style>
       .layui-btn a{
@@ -54,7 +54,7 @@
         <div class="layui-logo">
             <a class="logo" href="{% url 'pro_list' %}">  
                 <h1 style="color: white;">
-                    <strong>MrDoc</strong>
+                    <strong></strong>
                     <span style="font-size: 14px;" class="layui-badge-rim">后台管理</span>
                 </h1>
         </a>
@@ -111,9 +111,7 @@
       </div>
 
       <div class="layui-footer" style="text-align:center;">
-        <!-- 底部固定区域 -->
-          © <a href="https://gitee.com/zmister/MrDoc" target="_blank">MrDoc 2019-2020</a>&nbsp;-&nbsp;
-          当前版本：<a href="https://gitee.com/zmister/MrDoc/tree/{{mrdoc_version}}/" target="_blank">{{mrdoc_version}}</a>
+
       </div>
 </div>
 
