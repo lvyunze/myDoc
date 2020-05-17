@@ -1,0 +1,141 @@
+{# 文档、文集、文档模板管理基础HTML模板 #}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - 个人中心 - 觅道文档MrDoc</title>
+    <link href="{% static 'layui/css/layui.css' %}?version={{mrdoc_version}}" rel="stylesheet">
+    <link href="{% static 'mrdoc-admin.css' %}?version={{mrdoc_version}}" rel="stylesheet">
+    <link href="{% static 'viewerjs/viewer.css' %}?version={{mrdoc_version}}" rel="stylesheet">
+    <link rel="icon" href="{% static 'favicon_16.png' %}"/>
+    <style>
+        .layui-btn a{
+            color:white;
+        }
+        /* 左侧菜单栏悬浮样式 */
+        .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover{
+          background-color: #1E9FFF !important;
+        }
+        .layui-nav-tree .layui-nav-bar{
+          background-color: #1E9FFF !important;
+        }
+        /* 顶部菜单栏悬浮样式 */
+        .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{
+          background-color: #1E9FFF !important;
+        }
+        /* 管理文档文档状态条件筛选 管理图片图片分组筛选 */
+        .doc_status_condition > a.current{
+            color: #000!important;
+        }
+        /* layui分页组件样式 */
+        .layui-laypage .layui-laypage-curr .layui-laypage-em{
+            background-color: #1E9FFF !important;
+        }
+        /* 设置输入框的高度 和layui-btn-sm一致 */
+        .layui-input{
+          height: 30px !important;
+        }
+        /* layui引用文本样式 */
+        .layui-elem-quote{
+          border-left: 5px solid #1E9FFF !important;
+        }
+        /* layui单选框样式 */
+        .layui-form-radio>i:hover, .layui-form-radioed>i{
+          color: #1E9FFF;
+        }
+        /* 开关样式 */
+        .layui-form-onswitch{
+          border-color: #1E9FFF;
+          background-color: #1E9FFF;
+        }
+    </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">
+            <a class="logo" href="{% url 'pro_list' %}">
+            <h1 style="color: white;">
+                <strong>MrDoc</strong>
+                <span style="font-size: 14px;" class="layui-badge-rim">个人中心</span>
+            </h1>
+        </a>
+        </div>
+        <ul class="layui-nav layui-layout-right">
+          <li class="layui-nav-item">
+            <a href="javascript:;">
+              <i class="layui-icon layui-icon-username"></i> {{request.user.username}}
+            </a>
+            <dl class="layui-nav-child">
+                {% if request.user.is_superuser %}
+                <dd><a href="{% url 'project_manage' %}">后台管理</a></dd>
+                {% endif %}
+              <dd><a href="{% url 'logout' %}">退出登录</a></dd>
+            </dl>
+          </li>
+        </ul>
+    </div>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+          <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+          <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+              <a href="{% url 'manage_project' %}"><i class="layui-icon layui-icon-list"></i> 文集管理</a>
+            </li>
+            <li class="layui-nav-item layui-nav-itemed">
+              <a href="{% url 'manage_doc' %}"><i class="layui-icon layui-icon-file-b"></i> 文档管理</a>
+            </li>
+            <li class="layui-nav-item layui-nav-itemed">
+              <a href="{% url 'manage_doctemp' %}"><i class="layui-icon layui-icon-template"></i> 文档模板管理</a>
+            </li>
+            <li class="layui-nav-item layui-nav-itemed">
+              <a href="{% url 'manage_image' %}"><i class="layui-icon layui-icon-picture"></i> 图片素材管理</a>
+            </li>
+              <li class="layui-nav-item layui-nav-itemed">
+              <a href="{% url 'manage_attachment' %}"><i class="layui-icon layui-icon-export"></i> 附件管理</a>
+            </li>
+              <li class="layui-nav-item layui-nav-itemed">
+              <a href="{% url 'manage_token' %}"><i class="layui-icon layui-icon-key"></i> 用户Token管理</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">{% block content %}{% endblock %}</div>
+      </div>
+
+      <div class="layui-footer" style="text-align:center;">
+        <!-- 底部固定区域 -->
+          © <a href="https://gitee.com/zmister/MrDoc" target="_blank">MrDoc 2019-2020</a>&nbsp;-&nbsp;
+          当前版本：<a href="https://gitee.com/zmister/MrDoc/tree/{{mrdoc_version}}/" target="_blank">{{mrdoc_version}}</a>
+      </div>
+</div>
+
+<script src="{% static 'jquery/3.1.1/jquery.min.js' %}"></script>
+<script src="{% static 'layui/layui.all.js' %}"></script>
+<script>
+    var form = layui.form;
+    //为当前页面的目录链接添加样式
+    $("li a").each(function (i) {
+        var $me = $(this);
+        var lochref = $.trim(window.location.href);
+        var mehref = $.trim($me.get(0).href);
+        if (lochref.indexOf(mehref) != -1) {
+            //console.log($me,lochref,mehref)
+            $me.parent().addClass("layui-this");
+        } else {
+            //console.log(lochref,mehref)
+            $me.parent().removeClass("layui-this");
+        }
+    });
+    $.ajaxSetup({
+        data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+    });
+</script>
+{% block custom_script %}
+{% endblock %}
+</body>
+</html>
