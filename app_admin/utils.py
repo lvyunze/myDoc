@@ -1,9 +1,3 @@
-# coding:utf-8
-# @文件: utils.py
-# @创建者：州的先生
-# #日期：2019/11/23
-# 博客地址：zmister.com
-
 import smtplib
 from django.conf import settings
 from email.mime.text import MIMEText

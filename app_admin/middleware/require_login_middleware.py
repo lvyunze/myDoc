@@ -1,9 +1,3 @@
-# coding:utf-8
-# @文件: require_login_middleware.py
-# @创建者：州的先生
-# #日期：2020/5/8
-# 博客地址：zmister.com
-
 from app_admin.models import SysSetting
 from django.contrib.auth.decorators import login_required
 import re

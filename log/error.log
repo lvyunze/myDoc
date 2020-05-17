@@ -1,0 +1,1848 @@
+2020-05-17 14:30:08.936 | ERROR    | django.core.handlers.base:_get_response:113 - An error has been caught in function '_get_response', process 'MainProcess' (15172), thread 'Thread-1' (6300):
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+           │      │         └ 'staticfiles'
+           │      └ {'cache': <django.template.library.Library object at 0x05E1DDF0>, 'i18n': <django.template.library.Library object at 0x04A702...
+           └ <django.template.base.Parser object at 0x066D9370>
+
+KeyError: 'staticfiles'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x039058A0>
+    └ <Thread(Thread-1, started daemon 6300)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x03905780>
+    └ <Thread(Thread-1, started daemon 6300)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 6300)>
+    │    │        │    └ (<socket.socket fd=1368, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr...
+    │    │        └ <Thread(Thread-1, started daemon 6300)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <django.core.servers.basehttp.WSGIServer object at 0x05F36090>>
+    └ <Thread(Thread-1, started daemon 6300)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 647, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54819)
+    │    │              └ <socket.socket fd=1368, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <function BaseServer.finish_request at 0x0499BD20>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x05F36090>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 357, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <django.core.servers.basehttp.WSGIServer object at 0x05F36090>
+    │    │                   │        └ ('127.0.0.1', 54819)
+    │    │                   └ <socket.socket fd=1368, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <class 'django.core.servers.basehttp.WSGIRequestHandler'>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x05F36090>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 717, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x04E6CF18>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x061B6B90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 172, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x04E6CF60>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x061B6B90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 197, in handle_one_request
+    handler.run(self.server.get_app())
+    │       │   │    │      └ <function WSGIServer.get_app at 0x04E6CA50>
+    │       │   │    └ <django.core.servers.basehttp.WSGIServer object at 0x05F36090>
+    │       │   └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x061B6B90>
+    │       └ <function BaseHandler.run at 0x04D94C90>
+    └ <django.core.servers.basehttp.ServerHandler object at 0x061C1EB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\wsgiref\handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+    │    │        │           │    │        │    └ <function BaseHandler.start_response at 0x04E5E270>
+    │    │        │           │    │        └ <django.core.servers.basehttp.ServerHandler object at 0x061C1EB0>
+    │    │        │           │    └ {'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'COMMONPROGRAMFILES': 'C:\\Program Files (x86)\\Common Files', 'PROCE...
+    │    │        │           └ <django.core.servers.basehttp.ServerHandler object at 0x061C1EB0>
+    │    │        └ <django.core.handlers.wsgi.WSGIHandler object at 0x0533FA50>
+    │    └ None
+    └ <django.core.servers.basehttp.ServerHandler object at 0x061C1EB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler.get_response at 0x04E274B0>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x0533FA50>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+               │    │                 └ <WSGIRequest: GET '/'>
+               │    └ <function convert_exception_to_response.<locals>.inner at 0x05F89198>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x0533FA50>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.security.SecurityMiddleware object at 0x05F7D6F0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x05F89150>
+               │           └ <django.middleware.security.SecurityMiddleware object at 0x05F7D6F0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x05F7D730>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x05F89108>
+               │           └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x05F7D730>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.common.CommonMiddleware object at 0x05F7D770>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x05F890C0>
+               │           └ <django.middleware.common.CommonMiddleware object at 0x05F7D770>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.csrf.CsrfViewMiddleware object at 0x05F7D7D0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x05F89078>
+               │           └ <django.middleware.csrf.CsrfViewMiddleware object at 0x05F7D7D0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x05F7D8B0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x05F89030>
+               │           └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x05F7D8B0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.messages.middleware.MessageMiddleware object at 0x05256DD0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x05F6BF60>
+               │           └ <django.contrib.messages.middleware.MessageMiddleware object at 0x05256DD0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x05256EB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x05F56B70>
+               │           └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x05256EB0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x05256E10>
+
+  File "D:\myDoc\app_admin\middleware\require_login_middleware.py", line 20, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler._get_response at 0x05F6B420>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x05256E10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <bound method BaseHandler._get_response of <django.core.handlers.wsgi.WSGIHandler object at 0x0533FA50>>
+
+> File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               │                │         │                └ {}
+               │                │         └ ()
+               │                └ <WSGIRequest: GET '/'>
+               └ <function project_list at 0x057FAA98>
+
+  File "D:\myDoc\app_doc\views.py", line 173, in project_list
+    return render(request, 'app_doc/pro_list.html', locals())
+           │      └ <WSGIRequest: GET '/'>
+           └ <function render at 0x053D21E0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              │      │                │              │        │              └ None
+              │      │                │              │        └ <WSGIRequest: GET '/'>
+              │      │                │              └ {'request': <WSGIRequest: GET '/'>, 'kw': '', 'sort': 0, 'role': -1, 'sort_str': '', 'is_kw': False, 'is_auth': False, 'is_ro...
+              │      │                └ 'app_doc/pro_list.html'
+              │      └ <function render_to_string at 0x046BE780>
+              └ <module 'django.template.loader' from 'C:\\Users\\liangxinyu\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packag...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               │            │                    └ None
+               │            └ 'app_doc/pro_list.html'
+               └ <function get_template at 0x046BE6F0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           │      │            └ 'app_doc/pro_list.html'
+           │      └ <function DjangoTemplates.get_template at 0x046BE468>
+           └ <django.template.backends.django.DjangoTemplates object at 0x05DDCAD0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+           │        │    │      │            │               └ <django.template.backends.django.DjangoTemplates object at 0x05DDCAD0>
+           │        │    │      │            └ 'app_doc/pro_list.html'
+           │        │    │      └ <function Engine.get_template at 0x046B76A8>
+           │        │    └ <django.template.engine.Engine object at 0x05DF9350>
+           │        └ <django.template.backends.django.DjangoTemplates object at 0x05DDCAD0>
+           └ <class 'django.template.backends.django.Template'>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       │    │             └ 'app_doc/pro_list.html'
+                       │    └ <function Engine.find_template at 0x046B7618>
+                       └ <django.template.engine.Engine object at 0x05DF9350>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               │      │            │          └ None
+               │      │            └ 'app_doc/pro_list.html'
+               │      └ <function Loader.get_template at 0x066D8078>
+               └ <django.template.loaders.cached.Loader object at 0x066B1570>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\cached.py", line 53, in get_template
+    template = super().get_template(template_name, skip)
+                                    │              └ None
+                                    └ 'app_doc/pro_list.html'
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+    │         │       │      │              │    └ <django.template.engine.Engine object at 0x05DF9350>
+    │         │       │      │              └ <django.template.loaders.cached.Loader object at 0x066B1570>
+    │         │       │      └ 'app_doc/pro_list.html'
+    │         │       └ <django.template.base.Origin object at 0x066C6630>
+    │         └ <django.template.base.Origin object at 0x066C6630>
+    └ '{% load staticfiles %}\n<!DOCTYPE html>\n<html lang="zh-cn">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+    │               │    └ <function Template.compile_nodelist at 0x046AB1E0>
+    │               └ <django.template.base.Template object at 0x066C6F90>
+    └ <django.template.base.Template object at 0x066C6F90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+           │      └ <function Parser.parse at 0x046AB4F8>
+           └ <django.template.base.Parser object at 0x066D9370>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 477, in parse
+    raise self.error(token, e)
+          │    │     └ <django.template.base.Token object at 0x066D9390>
+          │    └ <function Parser.error at 0x046AB5D0>
+          └ <django.template.base.Parser object at 0x066D9370>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+                      │            │     └ <django.template.base.Token object at 0x066D9390>
+                      │            └ <django.template.base.Parser object at 0x066D9370>
+                      └ <function load at 0x04A93B70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+          │            │       └ 'staticfiles'
+          │            └ <django.template.base.Parser object at 0x066D9370>
+          └ <function find_library at 0x04A93AE0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+    │                      │      └ {'cache': <django.template.library.Library object at 0x05E1DDF0>, 'i18n': <django.template.library.Library object at 0x04A702...
+    │                      └ <django.template.base.Parser object at 0x066D9370>
+    └ 'staticfiles'
+
+django.template.exceptions.TemplateSyntaxError: 'staticfiles' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+doc_filter
+i18n
+l10n
+log
+project_filter
+rest_framework
+static
+tz
+2020-05-17 15:17:28.704 | ERROR    | django.core.handlers.base:_get_response:113 - An error has been caught in function '_get_response', process 'MainProcess' (14492), thread 'Thread-2' (3796):
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+           │      │         └ 'staticfiles'
+           │      └ {'cache': <django.template.library.Library object at 0x0478F410>, 'i18n': <django.template.library.Library object at 0x03B223...
+           └ <django.template.base.Parser object at 0x04F06F30>
+
+KeyError: 'staticfiles'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x02DF6930>
+    └ <Thread(Thread-2, started daemon 3796)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x02DF6810>
+    └ <Thread(Thread-2, started daemon 3796)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-2, started daemon 3796)>
+    │    │        │    └ (<socket.socket fd=1208, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr...
+    │    │        └ <Thread(Thread-2, started daemon 3796)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>>
+    └ <Thread(Thread-2, started daemon 3796)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 647, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 50809)
+    │    │              └ <socket.socket fd=1208, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <function BaseServer.finish_request at 0x03A4CDB0>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 357, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>
+    │    │                   │        └ ('127.0.0.1', 50809)
+    │    │                   └ <socket.socket fd=1208, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <class 'django.core.servers.basehttp.WSGIRequestHandler'>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 717, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x03F1CFA8>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04F7F790>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 172, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x03F1E030>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04F7F790>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 197, in handle_one_request
+    handler.run(self.server.get_app())
+    │       │   │    │      └ <function WSGIServer.get_app at 0x03F1CAE0>
+    │       │   │    └ <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>
+    │       │   └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04F7F790>
+    │       └ <function BaseHandler.run at 0x03F11150>
+    └ <django.core.servers.basehttp.ServerHandler object at 0x04F7E6B0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\wsgiref\handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+    │    │        │           │    │        │    └ <function BaseHandler.start_response at 0x03F11300>
+    │    │        │           │    │        └ <django.core.servers.basehttp.ServerHandler object at 0x04F7E6B0>
+    │    │        │           │    └ {'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'COMMONPROGRAMFILES': 'C:\\Program Files (x86)\\Common Files', 'PROCE...
+    │    │        │           └ <django.core.servers.basehttp.ServerHandler object at 0x04F7E6B0>
+    │    │        └ <django.core.handlers.wsgi.WSGIHandler object at 0x0439A070>
+    │    └ None
+    └ <django.core.servers.basehttp.ServerHandler object at 0x04F7E6B0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler.get_response at 0x03EE02B8>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x0439A070>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+               │    │                 └ <WSGIRequest: GET '/'>
+               │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F660>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x0439A070>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.security.SecurityMiddleware object at 0x04812CF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F618>
+               │           └ <django.middleware.security.SecurityMiddleware object at 0x04812CF0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x0481A0F0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F5D0>
+               │           └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x0481A0F0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.common.CommonMiddleware object at 0x0482EFD0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F588>
+               │           └ <django.middleware.common.CommonMiddleware object at 0x0482EFD0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.csrf.CsrfViewMiddleware object at 0x04885C70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F540>
+               │           └ <django.middleware.csrf.CsrfViewMiddleware object at 0x04885C70>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x048345F0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F4F8>
+               │           └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x048345F0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.messages.middleware.MessageMiddleware object at 0x04391FF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F4B0>
+               │           └ <django.contrib.messages.middleware.MessageMiddleware object at 0x04391FF0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x04391F90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F468>
+               │           └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x04391F90>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x04876FF0>
+
+  File "D:\myDoc\app_admin\middleware\require_login_middleware.py", line 20, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler._get_response at 0x048EA030>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x04876FF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <bound method BaseHandler._get_response of <django.core.handlers.wsgi.WSGIHandler object at 0x0439A070>>
+
+> File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               │                │         │                └ {}
+               │                │         └ ()
+               │                └ <WSGIRequest: GET '/'>
+               └ <function project_list at 0x04552C48>
+
+  File "D:\myDoc\app_doc\views.py", line 173, in project_list
+    return render(request, 'app_doc/pro_list.html', locals())
+           │      └ <WSGIRequest: GET '/'>
+           └ <function render at 0x04271348>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              │      │                │              │        │              └ None
+              │      │                │              │        └ <WSGIRequest: GET '/'>
+              │      │                │              └ {'request': <WSGIRequest: GET '/'>, 'kw': '', 'sort': 0, 'role': -1, 'sort_str': '', 'is_kw': False, 'is_auth': False, 'is_ro...
+              │      │                └ 'app_doc/pro_list.html'
+              │      └ <function render_to_string at 0x03780738>
+              └ <module 'django.template.loader' from 'C:\\Users\\liangxinyu\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packag...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               │            │                    └ None
+               │            └ 'app_doc/pro_list.html'
+               └ <function get_template at 0x037806A8>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           │      │            └ 'app_doc/pro_list.html'
+           │      └ <function DjangoTemplates.get_template at 0x03780420>
+           └ <django.template.backends.django.DjangoTemplates object at 0x04738E10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+           │        │    │      │            │               └ <django.template.backends.django.DjangoTemplates object at 0x04738E10>
+           │        │    │      │            └ 'app_doc/pro_list.html'
+           │        │    │      └ <function Engine.get_template at 0x03778660>
+           │        │    └ <django.template.engine.Engine object at 0x04747C10>
+           │        └ <django.template.backends.django.DjangoTemplates object at 0x04738E10>
+           └ <class 'django.template.backends.django.Template'>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       │    │             └ 'app_doc/pro_list.html'
+                       │    └ <function Engine.find_template at 0x037785D0>
+                       └ <django.template.engine.Engine object at 0x04747C10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               │      │            │          └ None
+               │      │            └ 'app_doc/pro_list.html'
+               │      └ <function Loader.get_template at 0x04F01E40>
+               └ <django.template.loaders.cached.Loader object at 0x04EF9150>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\cached.py", line 53, in get_template
+    template = super().get_template(template_name, skip)
+                                    │              └ None
+                                    └ 'app_doc/pro_list.html'
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+    │         │       │      │              │    └ <django.template.engine.Engine object at 0x04747C10>
+    │         │       │      │              └ <django.template.loaders.cached.Loader object at 0x04EF9150>
+    │         │       │      └ 'app_doc/pro_list.html'
+    │         │       └ <django.template.base.Origin object at 0x04F06070>
+    │         └ <django.template.base.Origin object at 0x04F06070>
+    └ '{% load staticfiles %}\n<!DOCTYPE html>\n<html lang="zh-cn">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+    │               │    └ <function Template.compile_nodelist at 0x0376E198>
+    │               └ <django.template.base.Template object at 0x04F06F50>
+    └ <django.template.base.Template object at 0x04F06F50>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+           │      └ <function Parser.parse at 0x0376E4B0>
+           └ <django.template.base.Parser object at 0x04F06F30>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 477, in parse
+    raise self.error(token, e)
+          │    │     └ <django.template.base.Token object at 0x04F095F0>
+          │    └ <function Parser.error at 0x0376E588>
+          └ <django.template.base.Parser object at 0x04F06F30>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+                      │            │     └ <django.template.base.Token object at 0x04F095F0>
+                      │            └ <django.template.base.Parser object at 0x04F06F30>
+                      └ <function load at 0x03B45B70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+          │            │       └ 'staticfiles'
+          │            └ <django.template.base.Parser object at 0x04F06F30>
+          └ <function find_library at 0x03B45AE0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+    │                      │      └ {'cache': <django.template.library.Library object at 0x0478F410>, 'i18n': <django.template.library.Library object at 0x03B223...
+    │                      └ <django.template.base.Parser object at 0x04F06F30>
+    └ 'staticfiles'
+
+django.template.exceptions.TemplateSyntaxError: 'staticfiles' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+doc_filter
+i18n
+l10n
+log
+project_filter
+rest_framework
+static
+tz
+2020-05-17 15:17:29.407 | ERROR    | django.core.handlers.base:_get_response:113 - An error has been caught in function '_get_response', process 'MainProcess' (14492), thread 'Thread-3' (11040):
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+           │      │         └ 'staticfiles'
+           │      └ {'cache': <django.template.library.Library object at 0x0478F410>, 'i18n': <django.template.library.Library object at 0x03B223...
+           └ <django.template.base.Parser object at 0x054A77D0>
+
+KeyError: 'staticfiles'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x02DF6930>
+    └ <Thread(Thread-3, started daemon 11040)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x02DF6810>
+    └ <Thread(Thread-3, started daemon 11040)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-3, started daemon 11040)>
+    │    │        │    └ (<socket.socket fd=1348, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr...
+    │    │        └ <Thread(Thread-3, started daemon 11040)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>>
+    └ <Thread(Thread-3, started daemon 11040)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 647, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 50814)
+    │    │              └ <socket.socket fd=1348, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <function BaseServer.finish_request at 0x03A4CDB0>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 357, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>
+    │    │                   │        └ ('127.0.0.1', 50814)
+    │    │                   └ <socket.socket fd=1348, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <class 'django.core.servers.basehttp.WSGIRequestHandler'>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 717, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x03F1CFA8>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04919950>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 172, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x03F1E030>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04919950>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 197, in handle_one_request
+    handler.run(self.server.get_app())
+    │       │   │    │      └ <function WSGIServer.get_app at 0x03F1CAE0>
+    │       │   │    └ <django.core.servers.basehttp.WSGIServer object at 0x03F18C70>
+    │       │   └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04919950>
+    │       └ <function BaseHandler.run at 0x03F11150>
+    └ <django.core.servers.basehttp.ServerHandler object at 0x049198B0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\wsgiref\handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+    │    │        │           │    │        │    └ <function BaseHandler.start_response at 0x03F11300>
+    │    │        │           │    │        └ <django.core.servers.basehttp.ServerHandler object at 0x049198B0>
+    │    │        │           │    └ {'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'COMMONPROGRAMFILES': 'C:\\Program Files (x86)\\Common Files', 'PROCE...
+    │    │        │           └ <django.core.servers.basehttp.ServerHandler object at 0x049198B0>
+    │    │        └ <django.core.handlers.wsgi.WSGIHandler object at 0x0439A070>
+    │    └ None
+    └ <django.core.servers.basehttp.ServerHandler object at 0x049198B0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler.get_response at 0x03EE02B8>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x0439A070>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+               │    │                 └ <WSGIRequest: GET '/'>
+               │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F660>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x0439A070>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.security.SecurityMiddleware object at 0x04812CF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F618>
+               │           └ <django.middleware.security.SecurityMiddleware object at 0x04812CF0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x0481A0F0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F5D0>
+               │           └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x0481A0F0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.common.CommonMiddleware object at 0x0482EFD0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F588>
+               │           └ <django.middleware.common.CommonMiddleware object at 0x0482EFD0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.csrf.CsrfViewMiddleware object at 0x04885C70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F540>
+               │           └ <django.middleware.csrf.CsrfViewMiddleware object at 0x04885C70>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x048345F0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F4F8>
+               │           └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x048345F0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.messages.middleware.MessageMiddleware object at 0x04391FF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F4B0>
+               │           └ <django.contrib.messages.middleware.MessageMiddleware object at 0x04391FF0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x04391F90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x0490F468>
+               │           └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x04391F90>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x04876FF0>
+
+  File "D:\myDoc\app_admin\middleware\require_login_middleware.py", line 20, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler._get_response at 0x048EA030>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x04876FF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <bound method BaseHandler._get_response of <django.core.handlers.wsgi.WSGIHandler object at 0x0439A070>>
+
+> File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               │                │         │                └ {}
+               │                │         └ ()
+               │                └ <WSGIRequest: GET '/'>
+               └ <function project_list at 0x04552C48>
+
+  File "D:\myDoc\app_doc\views.py", line 173, in project_list
+    return render(request, 'app_doc/pro_list.html', locals())
+           │      └ <WSGIRequest: GET '/'>
+           └ <function render at 0x04271348>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              │      │                │              │        │              └ None
+              │      │                │              │        └ <WSGIRequest: GET '/'>
+              │      │                │              └ {'request': <WSGIRequest: GET '/'>, 'kw': '', 'sort': 0, 'role': -1, 'sort_str': '', 'is_kw': False, 'is_auth': False, 'is_ro...
+              │      │                └ 'app_doc/pro_list.html'
+              │      └ <function render_to_string at 0x03780738>
+              └ <module 'django.template.loader' from 'C:\\Users\\liangxinyu\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packag...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               │            │                    └ None
+               │            └ 'app_doc/pro_list.html'
+               └ <function get_template at 0x037806A8>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           │      │            └ 'app_doc/pro_list.html'
+           │      └ <function DjangoTemplates.get_template at 0x03780420>
+           └ <django.template.backends.django.DjangoTemplates object at 0x04738E10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+           │        │    │      │            │               └ <django.template.backends.django.DjangoTemplates object at 0x04738E10>
+           │        │    │      │            └ 'app_doc/pro_list.html'
+           │        │    │      └ <function Engine.get_template at 0x03778660>
+           │        │    └ <django.template.engine.Engine object at 0x04747C10>
+           │        └ <django.template.backends.django.DjangoTemplates object at 0x04738E10>
+           └ <class 'django.template.backends.django.Template'>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       │    │             └ 'app_doc/pro_list.html'
+                       │    └ <function Engine.find_template at 0x037785D0>
+                       └ <django.template.engine.Engine object at 0x04747C10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               │      │            │          └ None
+               │      │            └ 'app_doc/pro_list.html'
+               │      └ <function Loader.get_template at 0x04F01E40>
+               └ <django.template.loaders.cached.Loader object at 0x04EF9150>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\cached.py", line 53, in get_template
+    template = super().get_template(template_name, skip)
+                                    │              └ None
+                                    └ 'app_doc/pro_list.html'
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+    │         │       │      │              │    └ <django.template.engine.Engine object at 0x04747C10>
+    │         │       │      │              └ <django.template.loaders.cached.Loader object at 0x04EF9150>
+    │         │       │      └ 'app_doc/pro_list.html'
+    │         │       └ <django.template.base.Origin object at 0x054A71B0>
+    │         └ <django.template.base.Origin object at 0x054A71B0>
+    └ '{% load staticfiles %}\n<!DOCTYPE html>\n<html lang="zh-cn">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+    │               │    └ <function Template.compile_nodelist at 0x0376E198>
+    │               └ <django.template.base.Template object at 0x054A7510>
+    └ <django.template.base.Template object at 0x054A7510>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+           │      └ <function Parser.parse at 0x0376E4B0>
+           └ <django.template.base.Parser object at 0x054A77D0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 477, in parse
+    raise self.error(token, e)
+          │    │     └ <django.template.base.Token object at 0x054A77F0>
+          │    └ <function Parser.error at 0x0376E588>
+          └ <django.template.base.Parser object at 0x054A77D0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+                      │            │     └ <django.template.base.Token object at 0x054A77F0>
+                      │            └ <django.template.base.Parser object at 0x054A77D0>
+                      └ <function load at 0x03B45B70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+          │            │       └ 'staticfiles'
+          │            └ <django.template.base.Parser object at 0x054A77D0>
+          └ <function find_library at 0x03B45AE0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+    │                      │      └ {'cache': <django.template.library.Library object at 0x0478F410>, 'i18n': <django.template.library.Library object at 0x03B223...
+    │                      └ <django.template.base.Parser object at 0x054A77D0>
+    └ 'staticfiles'
+
+django.template.exceptions.TemplateSyntaxError: 'staticfiles' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+doc_filter
+i18n
+l10n
+log
+project_filter
+rest_framework
+static
+tz
+2020-05-17 15:21:09.636 | ERROR    | django.core.handlers.base:_get_response:113 - An error has been caught in function '_get_response', process 'MainProcess' (12308), thread 'Thread-1' (11860):
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+           │      │         └ 'staticfiles'
+           │      └ {'cache': <django.template.library.Library object at 0x044CAF10>, 'i18n': <django.template.library.Library object at 0x038822...
+           └ <django.template.base.Parser object at 0x04F3DF10>
+
+KeyError: 'staticfiles'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x02B66930>
+    └ <Thread(Thread-1, started daemon 11860)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x02B66810>
+    └ <Thread(Thread-1, started daemon 11860)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 11860)>
+    │    │        │    └ (<socket.socket fd=1392, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr...
+    │    │        └ <Thread(Thread-1, started daemon 11860)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <django.core.servers.basehttp.WSGIServer object at 0x045BC3D0>>
+    └ <Thread(Thread-1, started daemon 11860)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 647, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 51015)
+    │    │              └ <socket.socket fd=1392, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <function BaseServer.finish_request at 0x037ACD68>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x045BC3D0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 357, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <django.core.servers.basehttp.WSGIServer object at 0x045BC3D0>
+    │    │                   │        └ ('127.0.0.1', 51015)
+    │    │                   └ <socket.socket fd=1392, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <class 'django.core.servers.basehttp.WSGIRequestHandler'>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x045BC3D0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 717, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x03C7E030>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04C6FDB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 172, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x03C7E078>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04C6FDB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 197, in handle_one_request
+    handler.run(self.server.get_app())
+    │       │   │    │      └ <function WSGIServer.get_app at 0x03C7CB28>
+    │       │   │    └ <django.core.servers.basehttp.WSGIServer object at 0x045BC3D0>
+    │       │   └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04C6FDB0>
+    │       └ <function BaseHandler.run at 0x03C71198>
+    └ <django.core.servers.basehttp.ServerHandler object at 0x04C6FE90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\wsgiref\handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+    │    │        │           │    │        │    └ <function BaseHandler.start_response at 0x03C71348>
+    │    │        │           │    │        └ <django.core.servers.basehttp.ServerHandler object at 0x04C6FE90>
+    │    │        │           │    └ {'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'COMMONPROGRAMFILES': 'C:\\Program Files (x86)\\Common Files', 'PROCE...
+    │    │        │           └ <django.core.servers.basehttp.ServerHandler object at 0x04C6FE90>
+    │    │        └ <django.core.handlers.wsgi.WSGIHandler object at 0x041CFC10>
+    │    └ None
+    └ <django.core.servers.basehttp.ServerHandler object at 0x04C6FE90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler.get_response at 0x03C3E300>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x041CFC10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+               │    │                 └ <WSGIRequest: GET '/'>
+               │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2588>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x041CFC10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.security.SecurityMiddleware object at 0x049CDE90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2540>
+               │           └ <django.middleware.security.SecurityMiddleware object at 0x049CDE90>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x049CDED0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D24F8>
+               │           └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x049CDED0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.common.CommonMiddleware object at 0x049CD710>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D24B0>
+               │           └ <django.middleware.common.CommonMiddleware object at 0x049CD710>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.csrf.CsrfViewMiddleware object at 0x04542850>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2468>
+               │           └ <django.middleware.csrf.CsrfViewMiddleware object at 0x04542850>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x045738D0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2420>
+               │           └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x045738D0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.messages.middleware.MessageMiddleware object at 0x040E8F10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D23D8>
+               │           └ <django.contrib.messages.middleware.MessageMiddleware object at 0x040E8F10>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x040E8F90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2390>
+               │           └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x040E8F90>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x040E8FD0>
+
+  File "D:\myDoc\app_admin\middleware\require_login_middleware.py", line 20, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler._get_response at 0x045BF6F0>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x040E8FD0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <bound method BaseHandler._get_response of <django.core.handlers.wsgi.WSGIHandler object at 0x041CFC10>>
+
+> File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               │                │         │                └ {}
+               │                │         └ ()
+               │                └ <WSGIRequest: GET '/'>
+               └ <function project_list at 0x042ABC90>
+
+  File "D:\myDoc\app_doc\views.py", line 173, in project_list
+    return render(request, 'app_doc/pro_list.html', locals())
+           │      └ <WSGIRequest: GET '/'>
+           └ <function render at 0x03FC5390>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              │      │                │              │        │              └ None
+              │      │                │              │        └ <WSGIRequest: GET '/'>
+              │      │                │              └ {'request': <WSGIRequest: GET '/'>, 'kw': '', 'sort': 0, 'role': -1, 'sort_str': '', 'is_kw': False, 'is_auth': False, 'is_ro...
+              │      │                └ 'app_doc/pro_list.html'
+              │      └ <function render_to_string at 0x034DD858>
+              └ <module 'django.template.loader' from 'C:\\Users\\liangxinyu\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packag...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               │            │                    └ None
+               │            └ 'app_doc/pro_list.html'
+               └ <function get_template at 0x034DD7C8>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           │      │            └ 'app_doc/pro_list.html'
+           │      └ <function DjangoTemplates.get_template at 0x034DD540>
+           └ <django.template.backends.django.DjangoTemplates object at 0x0448DA70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+           │        │    │      │            │               └ <django.template.backends.django.DjangoTemplates object at 0x0448DA70>
+           │        │    │      │            └ 'app_doc/pro_list.html'
+           │        │    │      └ <function Engine.get_template at 0x034D8780>
+           │        │    └ <django.template.engine.Engine object at 0x044A6F90>
+           │        └ <django.template.backends.django.DjangoTemplates object at 0x0448DA70>
+           └ <class 'django.template.backends.django.Template'>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       │    │             └ 'app_doc/pro_list.html'
+                       │    └ <function Engine.find_template at 0x034D86F0>
+                       └ <django.template.engine.Engine object at 0x044A6F90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               │      │            │          └ None
+               │      │            └ 'app_doc/pro_list.html'
+               │      └ <function Loader.get_template at 0x04F3C420>
+               └ <django.template.loaders.cached.Loader object at 0x04F3D470>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\cached.py", line 53, in get_template
+    template = super().get_template(template_name, skip)
+                                    │              └ None
+                                    └ 'app_doc/pro_list.html'
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+    │         │       │      │              │    └ <django.template.engine.Engine object at 0x044A6F90>
+    │         │       │      │              └ <django.template.loaders.cached.Loader object at 0x04F3D470>
+    │         │       │      └ 'app_doc/pro_list.html'
+    │         │       └ <django.template.base.Origin object at 0x04F3DBD0>
+    │         └ <django.template.base.Origin object at 0x04F3DBD0>
+    └ '{% load staticfiles %}\n<!DOCTYPE html>\n<html lang="zh-cn">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+    │               │    └ <function Template.compile_nodelist at 0x034CE2B8>
+    │               └ <django.template.base.Template object at 0x04F3DC30>
+    └ <django.template.base.Template object at 0x04F3DC30>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+           │      └ <function Parser.parse at 0x034CE5D0>
+           └ <django.template.base.Parser object at 0x04F3DF10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 477, in parse
+    raise self.error(token, e)
+          │    │     └ <django.template.base.Token object at 0x04F3DF30>
+          │    └ <function Parser.error at 0x034CE6A8>
+          └ <django.template.base.Parser object at 0x04F3DF10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+                      │            │     └ <django.template.base.Token object at 0x04F3DF30>
+                      │            └ <django.template.base.Parser object at 0x04F3DF10>
+                      └ <function load at 0x038A3BB8>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+          │            │       └ 'staticfiles'
+          │            └ <django.template.base.Parser object at 0x04F3DF10>
+          └ <function find_library at 0x038A3B28>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+    │                      │      └ {'cache': <django.template.library.Library object at 0x044CAF10>, 'i18n': <django.template.library.Library object at 0x038822...
+    │                      └ <django.template.base.Parser object at 0x04F3DF10>
+    └ 'staticfiles'
+
+django.template.exceptions.TemplateSyntaxError: 'staticfiles' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+doc_filter
+i18n
+l10n
+log
+project_filter
+rest_framework
+static
+tz
+2020-05-17 15:24:25.126 | ERROR    | django.core.handlers.base:_get_response:113 - An error has been caught in function '_get_response', process 'MainProcess' (8292), thread 'Thread-1' (5448):
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+           │      │         └ 'staticfiles'
+           │      └ {'cache': <django.template.library.Library object at 0x044CDBF0>, 'i18n': <django.template.library.Library object at 0x038823...
+           └ <django.template.base.Parser object at 0x04C71EF0>
+
+KeyError: 'staticfiles'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x02B86930>
+    └ <Thread(Thread-1, started daemon 5448)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x02B86810>
+    └ <Thread(Thread-1, started daemon 5448)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 5448)>
+    │    │        │    └ (<socket.socket fd=1368, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr...
+    │    │        └ <Thread(Thread-1, started daemon 5448)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <django.core.servers.basehttp.WSGIServer object at 0x0459D710>>
+    └ <Thread(Thread-1, started daemon 5448)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 647, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 51473)
+    │    │              └ <socket.socket fd=1368, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <function BaseServer.finish_request at 0x037ACD68>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x0459D710>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 357, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <django.core.servers.basehttp.WSGIServer object at 0x0459D710>
+    │    │                   │        └ ('127.0.0.1', 51473)
+    │    │                   └ <socket.socket fd=1368, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <class 'django.core.servers.basehttp.WSGIRequestHandler'>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x0459D710>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 717, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x03C7CFA8>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04C43490>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 172, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x03C7E030>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04C43490>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 197, in handle_one_request
+    handler.run(self.server.get_app())
+    │       │   │    │      └ <function WSGIServer.get_app at 0x03C7CAE0>
+    │       │   │    └ <django.core.servers.basehttp.WSGIServer object at 0x0459D710>
+    │       │   └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x04C43490>
+    │       └ <function BaseHandler.run at 0x03C71150>
+    └ <django.core.servers.basehttp.ServerHandler object at 0x04C43EF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\wsgiref\handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+    │    │        │           │    │        │    └ <function BaseHandler.start_response at 0x03C71300>
+    │    │        │           │    │        └ <django.core.servers.basehttp.ServerHandler object at 0x04C43EF0>
+    │    │        │           │    └ {'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'COMMONPROGRAMFILES': 'C:\\Program Files (x86)\\Common Files', 'PROCE...
+    │    │        │           └ <django.core.servers.basehttp.ServerHandler object at 0x04C43EF0>
+    │    │        └ <django.core.handlers.wsgi.WSGIHandler object at 0x041D6BB0>
+    │    └ None
+    └ <django.core.servers.basehttp.ServerHandler object at 0x04C43EF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler.get_response at 0x03C402B8>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x041D6BB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+               │    │                 └ <WSGIRequest: GET '/'>
+               │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2588>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x041D6BB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.security.SecurityMiddleware object at 0x049DB410>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2540>
+               │           └ <django.middleware.security.SecurityMiddleware object at 0x049DB410>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x049DB2F0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D24F8>
+               │           └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x049DB2F0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.common.CommonMiddleware object at 0x0454FCB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D24B0>
+               │           └ <django.middleware.common.CommonMiddleware object at 0x0454FCB0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.csrf.CsrfViewMiddleware object at 0x04535470>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2468>
+               │           └ <django.middleware.csrf.CsrfViewMiddleware object at 0x04535470>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x04557F50>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2420>
+               │           └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x04557F50>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.messages.middleware.MessageMiddleware object at 0x040F1FB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D23D8>
+               │           └ <django.contrib.messages.middleware.MessageMiddleware object at 0x040F1FB0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x040F1F90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x049D2390>
+               │           └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x040F1F90>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x040F1FD0>
+
+  File "D:\myDoc\app_admin\middleware\require_login_middleware.py", line 20, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler._get_response at 0x049C16F0>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x040F1FD0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <bound method BaseHandler._get_response of <django.core.handlers.wsgi.WSGIHandler object at 0x041D6BB0>>
+
+> File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               │                │         │                └ {}
+               │                │         └ ()
+               │                └ <WSGIRequest: GET '/'>
+               └ <function project_list at 0x042B2C48>
+
+  File "D:\myDoc\app_doc\views.py", line 173, in project_list
+    return render(request, 'app_doc/pro_list.html', locals())
+           │      └ <WSGIRequest: GET '/'>
+           └ <function render at 0x03FD1348>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              │      │                │              │        │              └ None
+              │      │                │              │        └ <WSGIRequest: GET '/'>
+              │      │                │              └ {'request': <WSGIRequest: GET '/'>, 'kw': '', 'sort': 0, 'role': -1, 'sort_str': '', 'is_kw': False, 'is_auth': False, 'is_ro...
+              │      │                └ 'app_doc/pro_list.html'
+              │      └ <function render_to_string at 0x034DE7C8>
+              └ <module 'django.template.loader' from 'C:\\Users\\liangxinyu\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packag...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               │            │                    └ None
+               │            └ 'app_doc/pro_list.html'
+               └ <function get_template at 0x034DE738>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           │      │            └ 'app_doc/pro_list.html'
+           │      └ <function DjangoTemplates.get_template at 0x034DE4B0>
+           └ <django.template.backends.django.DjangoTemplates object at 0x04498BF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+           │        │    │      │            │               └ <django.template.backends.django.DjangoTemplates object at 0x04498BF0>
+           │        │    │      │            └ 'app_doc/pro_list.html'
+           │        │    │      └ <function Engine.get_template at 0x034D86F0>
+           │        │    └ <django.template.engine.Engine object at 0x04498E30>
+           │        └ <django.template.backends.django.DjangoTemplates object at 0x04498BF0>
+           └ <class 'django.template.backends.django.Template'>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       │    │             └ 'app_doc/pro_list.html'
+                       │    └ <function Engine.find_template at 0x034D8660>
+                       └ <django.template.engine.Engine object at 0x04498E30>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               │      │            │          └ None
+               │      │            └ 'app_doc/pro_list.html'
+               │      └ <function Loader.get_template at 0x04C6D4F8>
+               └ <django.template.loaders.cached.Loader object at 0x04C48A10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\cached.py", line 53, in get_template
+    template = super().get_template(template_name, skip)
+                                    │              └ None
+                                    └ 'app_doc/pro_list.html'
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+    │         │       │      │              │    └ <django.template.engine.Engine object at 0x04498E30>
+    │         │       │      │              └ <django.template.loaders.cached.Loader object at 0x04C48A10>
+    │         │       │      └ 'app_doc/pro_list.html'
+    │         │       └ <django.template.base.Origin object at 0x04C713B0>
+    │         └ <django.template.base.Origin object at 0x04C713B0>
+    └ '{% load staticfiles %}\n<!DOCTYPE html>\n<html lang="zh-cn">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+    │               │    └ <function Template.compile_nodelist at 0x034CE228>
+    │               └ <django.template.base.Template object at 0x04C71F10>
+    └ <django.template.base.Template object at 0x04C71F10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+           │      └ <function Parser.parse at 0x034CE540>
+           └ <django.template.base.Parser object at 0x04C71EF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 477, in parse
+    raise self.error(token, e)
+          │    │     └ <django.template.base.Token object at 0x04CCFB30>
+          │    └ <function Parser.error at 0x034CE618>
+          └ <django.template.base.Parser object at 0x04C71EF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+                      │            │     └ <django.template.base.Token object at 0x04CCFB30>
+                      │            └ <django.template.base.Parser object at 0x04C71EF0>
+                      └ <function load at 0x038A4B70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+          │            │       └ 'staticfiles'
+          │            └ <django.template.base.Parser object at 0x04C71EF0>
+          └ <function find_library at 0x038A4AE0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+    │                      │      └ {'cache': <django.template.library.Library object at 0x044CDBF0>, 'i18n': <django.template.library.Library object at 0x038823...
+    │                      └ <django.template.base.Parser object at 0x04C71EF0>
+    └ 'staticfiles'
+
+django.template.exceptions.TemplateSyntaxError: 'staticfiles' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+doc_filter
+i18n
+l10n
+log
+project_filter
+rest_framework
+static
+tz
+2020-05-17 15:34:45.220 | ERROR    | django.core.handlers.base:_get_response:113 - An error has been caught in function '_get_response', process 'MainProcess' (12376), thread 'Thread-1' (3240):
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+           │      │         └ 'staticfiles'
+           │      └ {'cache': <django.template.library.Library object at 0x052DEA10>, 'i18n': <django.template.library.Library object at 0x046923...
+           └ <django.template.base.Parser object at 0x05AEEE90>
+
+KeyError: 'staticfiles'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 885, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x039C6930>
+    └ <Thread(Thread-1, started daemon 3240)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 917, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x039C6810>
+    └ <Thread(Thread-1, started daemon 3240)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\threading.py", line 865, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 3240)>
+    │    │        │    └ (<socket.socket fd=1292, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr...
+    │    │        └ <Thread(Thread-1, started daemon 3240)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <django.core.servers.basehttp.WSGIServer object at 0x053C1710>>
+    └ <Thread(Thread-1, started daemon 3240)>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 647, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 52410)
+    │    │              └ <socket.socket fd=1292, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <function BaseServer.finish_request at 0x045BCDB0>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x053C1710>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 357, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <django.core.servers.basehttp.WSGIServer object at 0x053C1710>
+    │    │                   │        └ ('127.0.0.1', 52410)
+    │    │                   └ <socket.socket fd=1292, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8001), raddr=...
+    │    └ <class 'django.core.servers.basehttp.WSGIRequestHandler'>
+    └ <django.core.servers.basehttp.WSGIServer object at 0x053C1710>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\socketserver.py", line 717, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x04A8CFA8>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x05A96DB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 172, in handle
+    self.handle_one_request()
+    │    └ <function WSGIRequestHandler.handle_one_request at 0x04A8E030>
+    └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x05A96DB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\servers\basehttp.py", line 197, in handle_one_request
+    handler.run(self.server.get_app())
+    │       │   │    │      └ <function WSGIServer.get_app at 0x04A8CAE0>
+    │       │   │    └ <django.core.servers.basehttp.WSGIServer object at 0x053C1710>
+    │       │   └ <django.core.servers.basehttp.WSGIRequestHandler object at 0x05A96DB0>
+    │       └ <function BaseHandler.run at 0x04A81150>
+    └ <django.core.servers.basehttp.ServerHandler object at 0x057DAB50>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\wsgiref\handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+    │    │        │           │    │        │    └ <function BaseHandler.start_response at 0x04A81300>
+    │    │        │           │    │        └ <django.core.servers.basehttp.ServerHandler object at 0x057DAB50>
+    │    │        │           │    └ {'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'COMMONPROGRAMFILES': 'C:\\Program Files (x86)\\Common Files', 'PROCE...
+    │    │        │           └ <django.core.servers.basehttp.ServerHandler object at 0x057DAB50>
+    │    │        └ <django.core.handlers.wsgi.WSGIHandler object at 0x04FDFC10>
+    │    └ None
+    └ <django.core.servers.basehttp.ServerHandler object at 0x057DAB50>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler.get_response at 0x04A502B8>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x04FDFC10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 75, in get_response
+    response = self._middleware_chain(request)
+               │    │                 └ <WSGIRequest: GET '/'>
+               │    └ <function convert_exception_to_response.<locals>.inner at 0x057DB588>
+               └ <django.core.handlers.wsgi.WSGIHandler object at 0x04FDFC10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.security.SecurityMiddleware object at 0x057DAA70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x057DB540>
+               │           └ <django.middleware.security.SecurityMiddleware object at 0x057DAA70>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x057DAAB0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x057DB4F8>
+               │           └ <django.contrib.sessions.middleware.SessionMiddleware object at 0x057DAAB0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.common.CommonMiddleware object at 0x057DAAF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x057DB4B0>
+               │           └ <django.middleware.common.CommonMiddleware object at 0x057DAAF0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.csrf.CsrfViewMiddleware object at 0x057DAB10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x057DB468>
+               │           └ <django.middleware.csrf.CsrfViewMiddleware object at 0x057DAB10>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x057DA850>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x057DB420>
+               │           └ <django.contrib.auth.middleware.AuthenticationMiddleware object at 0x057DA850>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.contrib.messages.middleware.MessageMiddleware object at 0x04E72C50>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x057DB3D8>
+               │           └ <django.contrib.messages.middleware.MessageMiddleware object at 0x04E72C50>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x04EF8FF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\utils\deprecation.py", line 94, in __call__
+    response = response or self.get_response(request)
+               │           │    │            └ <WSGIRequest: GET '/'>
+               │           │    └ <function convert_exception_to_response.<locals>.inner at 0x057DB390>
+               │           └ <django.middleware.clickjacking.XFrameOptionsMiddleware object at 0x04EF8FF0>
+               └ None
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x04EF8F70>
+
+  File "D:\myDoc\app_admin\middleware\require_login_middleware.py", line 20, in __call__
+    response = self.get_response(request)
+               │    │            └ <WSGIRequest: GET '/'>
+               │    └ <function BaseHandler._get_response at 0x053CA6F0>
+               └ <app_admin.middleware.require_login_middleware.RequiredLoginMiddleware object at 0x04EF8F70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+               │            └ <WSGIRequest: GET '/'>
+               └ <bound method BaseHandler._get_response of <django.core.handlers.wsgi.WSGIHandler object at 0x04FDFC10>>
+
+> File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               │                │         │                └ {}
+               │                │         └ ()
+               │                └ <WSGIRequest: GET '/'>
+               └ <function project_list at 0x050BCC48>
+
+  File "D:\myDoc\app_doc\views.py", line 173, in project_list
+    return render(request, 'app_doc/pro_list.html', locals())
+           │      └ <WSGIRequest: GET '/'>
+           └ <function render at 0x04DD7348>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              │      │                │              │        │              └ None
+              │      │                │              │        └ <WSGIRequest: GET '/'>
+              │      │                │              └ {'request': <WSGIRequest: GET '/'>, 'kw': '', 'sort': 0, 'role': -1, 'sort_str': '', 'is_kw': False, 'is_auth': False, 'is_ro...
+              │      │                └ 'app_doc/pro_list.html'
+              │      └ <function render_to_string at 0x042EE858>
+              └ <module 'django.template.loader' from 'C:\\Users\\liangxinyu\\AppData\\Local\\Programs\\Python\\Python37-32\\lib\\site-packag...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               │            │                    └ None
+               │            └ 'app_doc/pro_list.html'
+               └ <function get_template at 0x042EE7C8>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           │      │            └ 'app_doc/pro_list.html'
+           │      └ <function DjangoTemplates.get_template at 0x042EE540>
+           └ <django.template.backends.django.DjangoTemplates object at 0x0529DAF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+           │        │    │      │            │               └ <django.template.backends.django.DjangoTemplates object at 0x0529DAF0>
+           │        │    │      │            └ 'app_doc/pro_list.html'
+           │        │    │      └ <function Engine.get_template at 0x042E8780>
+           │        │    └ <django.template.engine.Engine object at 0x052B7D10>
+           │        └ <django.template.backends.django.DjangoTemplates object at 0x0529DAF0>
+           └ <class 'django.template.backends.django.Template'>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+                       │    │             └ 'app_doc/pro_list.html'
+                       │    └ <function Engine.find_template at 0x042E86F0>
+                       └ <django.template.engine.Engine object at 0x052B7D10>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+               │      │            │          └ None
+               │      │            └ 'app_doc/pro_list.html'
+               │      └ <function Loader.get_template at 0x05AA9F60>
+               └ <django.template.loaders.cached.Loader object at 0x05ACB5F0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\cached.py", line 53, in get_template
+    template = super().get_template(template_name, skip)
+                                    │              └ None
+                                    └ 'app_doc/pro_list.html'
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+    │         │       │      │              │    └ <django.template.engine.Engine object at 0x052B7D10>
+    │         │       │      │              └ <django.template.loaders.cached.Loader object at 0x05ACB5F0>
+    │         │       │      └ 'app_doc/pro_list.html'
+    │         │       └ <django.template.base.Origin object at 0x05AEE550>
+    │         └ <django.template.base.Origin object at 0x05AEE550>
+    └ '{% load staticfiles %}\n<!DOCTYPE html>\n<html lang="zh-cn">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA...
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+    │               │    └ <function Template.compile_nodelist at 0x042DE2B8>
+    │               └ <django.template.base.Template object at 0x05AEECF0>
+    └ <django.template.base.Template object at 0x05AEECF0>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+           │      └ <function Parser.parse at 0x042DE5D0>
+           └ <django.template.base.Parser object at 0x05AEEE90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 477, in parse
+    raise self.error(token, e)
+          │    │     └ <django.template.base.Token object at 0x05AEEEB0>
+          │    └ <function Parser.error at 0x042DE6A8>
+          └ <django.template.base.Parser object at 0x05AEEE90>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\base.py", line 475, in parse
+    compiled_result = compile_func(self, token)
+                      │            │     └ <django.template.base.Token object at 0x05AEEEB0>
+                      │            └ <django.template.base.Parser object at 0x05AEEE90>
+                      └ <function load at 0x046B3C00>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+          │            │       └ 'staticfiles'
+          │            └ <django.template.base.Parser object at 0x05AEEE90>
+          └ <function find_library at 0x046B3B70>
+
+  File "C:\Users\liangxinyu\AppData\Local\Programs\Python\Python37-32\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+    │                      │      └ {'cache': <django.template.library.Library object at 0x052DEA10>, 'i18n': <django.template.library.Library object at 0x046923...
+    │                      └ <django.template.base.Parser object at 0x05AEEE90>
+    └ 'staticfiles'
+
+django.template.exceptions.TemplateSyntaxError: 'staticfiles' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+doc_filter
+i18n
+l10n
+log
+project_filter
+rest_framework
+static
+tz

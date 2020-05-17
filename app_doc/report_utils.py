@@ -1,9 +1,4 @@
-# coding:utf-8
-# @文件: report_utils.py
-# @创建者：州的先生
-# #日期：2019/12/7
-# 博客地址：zmister.com
-# MrDoc文集文档导出相关功能代码
+# 文集文档导出相关功能代码
 from django.conf import settings
 import subprocess
 import datetime,time

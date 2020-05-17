@@ -50,7 +50,7 @@
             <form class="layui-form" action="{% url 'register' %}"  method='POST'>
                 {% csrf_token %}
                 <div class="layui-form-item">
-                    <h2><strong>注册 - MrDoc</strong></h2>
+                    <h2><strong>注册 </strong></h2>
                 </div>
                 <span style='color:red;margin-bottom: 10px;'>{{ errormsg }}</span>
                 {% if enable_register_code %}

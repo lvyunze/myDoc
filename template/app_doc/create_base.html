@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta http-equiv="Cache-Control" content="max-age=7200" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>{% block title %}{% endblock %} - MrDoc</title>
+    <title>{% block title %}{% endblock %} - 文档管理</title>
     <link href="{% static 'layui/css/layui.css' %}?version={{mrdoc_version}}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'editor.md/css/editormd.css' %}?version={{mrdoc_version}}" />
     <link href="{% static 'mrdoc.css' %}?version={{mrdoc_version}}" rel="stylesheet">
@@ -93,7 +93,7 @@
     var editor = editormd("editor-md", {
         width       :   "100%",
         height      :   "1000px;",
-        placeholder :   "开始使用Markdown书写MrDoc文档，编辑器支持以下功能：\n1.粘贴上传图片\n2.六级标题\n3.代码高亮\n4.本地图片和外链图片\n5.表格\n6.多级列表和任务列表\n7.Katex公式\n8.流程图\n9.时序图\n……",
+        placeholder :   "",
         toolbarIcons : function() {
             return [
                 "undo", "redo", "|",
