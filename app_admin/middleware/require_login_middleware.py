@@ -29,8 +29,7 @@ class RequiredLoginMiddleware():
                 if is_exceptions:
                     return None
                 else:
-                    return login_required(view_func)(request, *view_args,
-                                                     **view_kwargs)
+                    return login_required(view_func)(request, *view_args, **view_kwargs)
             else:
                 return None
         except Exception as e:

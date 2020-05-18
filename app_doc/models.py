@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # 文集模型
 class Project(models.Model):
+    objects = None
     name = models.CharField(verbose_name="文档名称",max_length=50)
     intro = models.TextField(verbose_name="介绍")
     # 文集权限说明：0表示公开，1表示私密,2表示指定用户可见,3表示访问码可见 默认公开
@@ -44,6 +45,7 @@ class ProjectCollaborator(models.Model):
 
 # 文档模型
 class Doc(models.Model):
+    objects = None
     name = models.CharField(verbose_name="文档标题",max_length=50)
     pre_content = models.TextField(verbose_name="编辑内容",null=True,blank=True)
     content = models.TextField(verbose_name="文档内容",null=True,blank=True)
@@ -88,6 +90,7 @@ class DocHistory(models.Model):
 
 # 文档模板模型
 class DocTemp(models.Model):
+    objects = None
     name = models.CharField(verbose_name="模板名称",max_length=50)
     content = models.TextField(verbose_name="文档模板")
     create_user = models.ForeignKey(User,on_delete=models.CASCADE)
