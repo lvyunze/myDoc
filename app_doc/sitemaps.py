@@ -1,8 +1,9 @@
-from django.contrib.sitemaps import Sitemap,GenericSitemap
+# ut-8
+from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
-from app_doc.models import Doc,Project
+from app_doc.models import Doc, Project
 
-# 首页地图
+
 class HomeSitemap(Sitemap):
     priority = 0.5
     changefreq = 'daily'
@@ -13,7 +14,7 @@ class HomeSitemap(Sitemap):
     def location(self, item):
         return reverse(item)
 
-# 文集地图
+
 class ProjectSitemap(Sitemap):
     changefreq = "daily"
     priority = 0.8
@@ -21,18 +22,18 @@ class ProjectSitemap(Sitemap):
     def items(self):
         return Project.objects.filter(role=0)
 
-# 文档地图
+
 class DocSitemap(Sitemap):
     changefreq = "daily"
     priority = 0.8
 
-    def __init__(self,pro):
+    def __init__(self, pro):
         self.pro = pro
 
     def items(self):
-        return Doc.objects.filter(status=1,top_doc=self.pro)
+        return Doc.objects.filter(status=1, top_doc=self.pro)
 
-    def lastmod(self,obj):
+    def lastmod(self, obj):
         return obj.modify_time
 
 
