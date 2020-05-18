@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 # 系统设置项模型
 class SysSetting(models.Model):
+    objects = None
     name = models.CharField(verbose_name="项目",max_length=50,primary_key=True)
     value = models.TextField(verbose_name="内容",null=True,blank=True)
     types = models.CharField(verbose_name="类型",max_length=10,default="basic")
