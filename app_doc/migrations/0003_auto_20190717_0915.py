@@ -1,12 +1,11 @@
+# utf-8
 from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('app_doc', '0002_doc_pre_content'),
     ]
-
     operations = [
         migrations.RemoveField(
             model_name='doc',

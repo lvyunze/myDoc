@@ -1,12 +1,11 @@
+# utf-8
 from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('app_doc', '0013_image_file_name'),
     ]
-
     operations = [
         migrations.AlterField(
             model_name='doc',
