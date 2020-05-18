@@ -1,30 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b150852-245c-4df1-b76d-43d2d350d278" name="Default Changelist" comment="修改了一部分细节2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3b150852-245c-4df1-b76d-43d2d350d278" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/config/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-19125449585664manuel-cosentino-670480-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-19130238995271site_banner_1500.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-19135121674904.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-27134531102843.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-27143257939483.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-27144625887847.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-27144831731390.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-27145211532794.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-27150400032008.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-27150534099911.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-27175551618645.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-27175803741664.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/201907/2019-07-28090944649358mrdoc_20190728.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/app_admin/admin_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/app_admin/admin_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/app_api/manage_token.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/app_api/manage_token.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/app_doc/docs_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/app_doc/docs_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/app_doc/foot_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/app_doc/foot_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/app_doc/manage_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/app_doc/manage_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/app_doc/pro_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/app_doc/pro_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
