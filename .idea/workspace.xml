@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b150852-245c-4df1-b76d-43d2d350d278" name="Default Changelist" comment="">
+    <list default="true" id="3b150852-245c-4df1-b76d-43d2d350d278" name="Default Changelist" comment="修改了一部分细节">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_doc/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_doc/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_doc/migrations/0002_doc_pre_content.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_doc/migrations/0002_doc_pre_content.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_doc/migrations/0003_auto_20190717_0915.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_doc/migrations/0003_auto_20190717_0915.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_doc/migrations/0004_auto_20190717_0939.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_doc/migrations/0004_auto_20190717_0939.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_doc/migrations/0005_auto_20190727_1232.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_doc/migrations/0005_auto_20190727_1232.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_doc/migrations/0006_auto_20191215_1910.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_doc/migrations/0006_auto_20191215_1910.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_doc/migrations/0007_auto_20191221_1035.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_doc/migrations/0007_auto_20191221_1035.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_doc/migrations/0008_auto_20191221_1055.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_doc/migrations/0008_auto_20191221_1055.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_doc/migrations/0009_projectreport.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_doc/migrations/0009_projectreport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/error.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,14 +211,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="46" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589765946254" />
-    <state x="322" y="29" key="Vcs.Push.Dialog.v2" timestamp="1589768166285">
+    <state x="322" y="29" key="Vcs.Push.Dialog.v2" timestamp="1589769426607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="322" y="29" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589768166285" />
+    <state x="322" y="29" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589769426607" />
     <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1589766181500">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589766181500" />
+    <state x="491" y="214" key="git4idea.merge.GitPullDialog" timestamp="1589769481761">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="491" y="214" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1589769481761" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
