@@ -4,11 +4,11 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %} - 个人中心 - 觅道文档MrDoc</title>
+    <title>{% block title %}{% endblock %} - 个人中心 - 在线文档管理</title>
     <link href="{% static 'layui/css/layui.css' %}?version={{mrdoc_version}}" rel="stylesheet">
     <link href="{% static 'mrdoc-admin.css' %}?version={{mrdoc_version}}" rel="stylesheet">
     <link href="{% static 'viewerjs/viewer.css' %}?version={{mrdoc_version}}" rel="stylesheet">
-    <link rel="icon" href="{% static 'favicon_16.png' %}"/>
+    <link rel="icon" href="{% static 'logo.jpg' %}"/>
     <style>
         .layui-btn a{
             color:white;
@@ -57,7 +57,7 @@
         <div class="layui-logo">
             <a class="logo" href="{% url 'pro_list' %}">
             <h1 style="color: white;">
-                <strong>MrDoc</strong>
+                <strong></strong>
                 <span style="font-size: 14px;" class="layui-badge-rim">个人中心</span>
             </h1>
         </a>
@@ -109,8 +109,7 @@
 
       <div class="layui-footer" style="text-align:center;">
         <!-- 底部固定区域 -->
-          © <a href="https://gitee.com/zmister/MrDoc" target="_blank">MrDoc 2019-2020</a>&nbsp;-&nbsp;
-          当前版本：<a href="https://gitee.com/zmister/MrDoc/tree/{{mrdoc_version}}/" target="_blank">{{mrdoc_version}}</a>
+
       </div>
 </div>
 
