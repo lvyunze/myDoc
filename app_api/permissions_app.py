@@ -1,15 +1,12 @@
-from rest_framework.permissions import BasePermission,SAFE_METHODS
+# utf-8
+from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 
 class AppPermission(BasePermission):
     message = '只有VIP才能访问'
 
     def has_permission(self, request, view):
-        # vip才有访问权限
-        # request.user:当前经过认证的用户对象
-        # 如果没有认证 request.user就是匿名用户
         if not request.auth:
-            # 认证没有通过
             return False
         if request.user.vip:
             return True
@@ -17,9 +14,6 @@ class AppPermission(BasePermission):
             return False
 
     def has_object_permission(self, request, view, obj):
-
         if request.method in SAFE_METHODS:
             return True
-
-            # 示例必须要有一个名为`owner`的属性
         return obj.owner == request.user
